@@ -219,19 +219,27 @@
     <section class="stats-bar">
         <div class="container stats-grid">
             <div class="stat-item">
-                <span class="stat-number" data-target="2500000">0</span>
+                <div class="stat-value-wrap" style="display: flex; align-items: baseline; justify-content: center;">
+                    <span class="stat-number" data-target="2500000">0</span>
+                </div>
                 <span class="stat-label">Happy Customers</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                <div class="stat-value-wrap" style="display: flex; align-items: baseline; justify-content: center;">
+                    <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+                </div>
                 <span class="stat-label">Satisfaction Rate</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="120">0</span>
+                <div class="stat-value-wrap" style="display: flex; align-items: baseline; justify-content: center;">
+                    <span class="stat-number" data-target="120">0</span>
+                </div>
                 <span class="stat-label">Years of Trust</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="50">0</span><span class="stat-suffix">B+</span>
+                <div class="stat-value-wrap" style="display: flex; align-items: baseline; justify-content: center;">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">B+</span>
+                </div>
                 <span class="stat-label">Assets Managed</span>
             </div>
         </div>
@@ -240,7 +248,6 @@
     <!-- Why Choose Us Cards -->
     <section class="section" style="background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);">
         <div class="container">
-            <div class="section-badge reveal zoom-in">Our Advantages</div>
             <h2 class="section-title reveal">Why Choose Stackly?</h2>
             <p class="section-subtitle reveal d1">Trusted by millions. Built for the future of banking.</p>
             <div class="feature-cards-grid">
@@ -379,10 +386,9 @@
     <!-- Quick Actions Card Row -->
     <section class="section" style="background: var(--bg-white); padding: 3rem 5%;">
         <div class="container">
-            <div class="section-badge">Get Started Fast</div>
-            <h2 class="section-title">Quick Actions</h2>
+            <h2 class="section-title reveal">Quick Actions</h2>
             <div class="quick-actions-grid">
-                <a href="savings.html" class="quick-action-card" id="qa-savings">
+                <a href="savings.html" class="quick-action-card reveal d1" id="qa-savings">
                     <div class="qa-icon-wrap" style="background: #e0f2fe;">💰</div>
                     <div class="qa-info">
                         <span class="qa-title">Open Savings</span>
@@ -390,27 +396,27 @@
                     </div>
                     <span class="qa-arrow">→</span>
                 </a>
-                <a href="loans.html" class="quick-action-card" id="qa-loans">
-                    <div class="qa-icon-wrap" style="background: #fce7f3;">🏦</div>
+                <a href="loans.html" class="quick-action-card reveal d2" id="qa-loans">
+                    <div class="qa-icon-wrap" style="background: #e0e7ff;">🏠</div>
                     <div class="qa-info">
-                        <span class="qa-title">Apply for Loan</span>
-                        <span class="qa-desc">Rates from 4.99% APR</span>
+                        <span class="qa-title">Get a Loan</span>
+                        <span class="qa-desc">Rates from 6.5% APR</span>
                     </div>
                     <span class="qa-arrow">→</span>
                 </a>
-                <a href="investments.html" class="quick-action-card" id="qa-invest">
-                    <div class="qa-icon-wrap" style="background: #d1fae5;">📈</div>
+                <a href="dashboard.html" class="quick-action-card reveal d3" id="qa-transfer">
+                    <div class="qa-icon-wrap" style="background: #dcfce7;">💸</div>
                     <div class="qa-info">
-                        <span class="qa-title">Start Investing</span>
-                        <span class="qa-desc">AI-powered portfolios</span>
+                        <span class="qa-title">Send Money</span>
+                        <span class="qa-desc">Zero fees globally</span>
                     </div>
                     <span class="qa-arrow">→</span>
                 </a>
-                <a href="credit-cards.html" class="quick-action-card" id="qa-cards">
-                    <div class="qa-icon-wrap" style="background: #ede9fe;">💳</div>
+                <a href="cards.html" class="quick-action-card reveal d4" id="qa-cards">
+                    <div class="qa-icon-wrap" style="background: #fef9c3;">💳</div>
                     <div class="qa-info">
-                        <span class="qa-title">Elite Credit Card</span>
-                        <span class="qa-desc">Up to 5% cashback</span>
+                        <span class="qa-title">Credit Cards</span>
+                        <span class="qa-desc">3% cashback on everything</span>
                     </div>
                     <span class="qa-arrow">→</span>
                 </a>
@@ -455,9 +461,8 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section" style="background: var(--bg-light);">
+    <section class="section" style="background: #e8f4fd;">
         <div class="container">
-            <div class="section-badge">Customer Stories</div>
             <h2 class="section-title">What Our Customers Say</h2>
             <p class="section-subtitle">Real stories from real people who chose Stackly.</p>
             <div class="testimonials-grid">
@@ -549,16 +554,16 @@
                     <a href="tel:+914270000000" class="footer-phone">+91 427 000 0000</a>
                 </div>
                 <div class="footer-socials">
-                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                    <a href="404.html" class="social-icon" aria-label="LinkedIn">
                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                     </a>
-                    <a href="#" class="social-icon" aria-label="YouTube">
+                    <a href="404.html" class="social-icon" aria-label="YouTube">
                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#264A62"/></svg>
                     </a>
-                    <a href="#" class="social-icon" aria-label="X / Twitter">
+                    <a href="404.html" class="social-icon" aria-label="X / Twitter">
                         <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
+                    <a href="404.html" class="social-icon" aria-label="Instagram">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
                     </a>
                 </div>
@@ -665,6 +670,45 @@
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
         }, { passive: true });
+    })();
+
+    // ── Stats Counter Animation ─────────────────────────────────────
+    (function() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        if (statNumbers.length === 0) return;
+        
+        let hasCounted = false;
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounted) {
+                    hasCounted = true;
+                    statNumbers.forEach(stat => {
+                        const target = +stat.getAttribute('data-target');
+                        const duration = 2000; // 2 seconds
+                        const stepTime = Math.abs(Math.floor(duration / 60)); // 60fps
+                        
+                        let current = 0;
+                        const increment = target / (duration / stepTime);
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            // Format number with commas
+                            stat.innerText = Math.floor(current).toLocaleString();
+                        }, stepTime);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe the first stat number's parent container
+        const statsGrid = document.querySelector('.stats-grid');
+        if (statsGrid) {
+            countObserver.observe(statsGrid);
+        }
     })();
     </script>
 </body>
