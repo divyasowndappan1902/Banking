@@ -66,12 +66,12 @@
             animation: float-shape 8s ease-in-out infinite reverse;
         }
         @keyframes spin-slow {
-            from { transform: rotate(0deg); }
-            to   { transform: rotate(360deg); }
+            from { transform: perspective(800px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            to   { transform: perspective(800px) rotateX(360deg) rotateY(180deg) rotateZ(360deg); }
         }
         @keyframes float-shape {
-            0%,100% { transform: translateY(0) scale(1); }
-            50%      { transform: translateY(-20px) scale(1.08); }
+            0%,100% { transform: perspective(800px) translateY(0) scale(1) rotateY(0deg); }
+            50%      { transform: perspective(800px) translateY(-20px) scale(1.08) rotateY(180deg); }
         }
 
         /* Hero content enhanced entrance */
@@ -91,13 +91,24 @@
         }
         .navbar { transition: height 0.35s ease, box-shadow 0.35s ease, background 0.35s ease; }
 
-        /* Card image zoom on hover */
-        .card { overflow: hidden; }
+        /* 3D Card Hover Effect */
+        .card { 
+            overflow: hidden; 
+            perspective: 1200px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s cubic-bezier(0.22,1,0.36,1);
+        }
+        .card:hover {
+            transform: perspective(1200px) translateY(-10px) rotateX(4deg) rotateY(-4deg);
+            box-shadow: -15px 25px 40px rgba(38,74,98,0.2);
+            z-index: 10;
+        }
         .card-img {
             transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
+            transform: translateZ(0); 
         }
         .card:hover .card-img {
-            transform: scale(1.07);
+            transform: scale(1.07) translateZ(30px);
         }
 
         /* Pulse ring on section badges */
@@ -159,9 +170,56 @@
         .section-title.visible::after {
             transform: translateX(-50%) scaleX(1);
         }
+
+        /* Ambient Background Animation */
+        .ambient-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: transparent;
+        }
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float-ambient 25s infinite ease-in-out alternate;
+        }
+        .orb-1 {
+            width: 40vw; height: 40vw;
+            background: rgba(138, 210, 192, 0.4);
+            top: -10%; left: -10%;
+            animation-delay: 0s;
+        }
+        .orb-2 {
+            width: 35vw; height: 35vw;
+            background: rgba(38, 74, 98, 0.2);
+            bottom: -10%; right: -5%;
+            animation-delay: -5s;
+        }
+        .orb-3 {
+            width: 30vw; height: 30vw;
+            background: rgba(58, 123, 213, 0.3);
+            top: 40%; left: 60%;
+            animation-delay: -10s;
+        }
+        @keyframes float-ambient {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(5vw, 10vh) scale(1.1); }
+            66% { transform: translate(-10vw, 5vh) scale(0.9); }
+            100% { transform: translate(0, -5vh) scale(1.05); }
+        }
     </style>
 </head>
 <body>
+    <!-- Ambient Background Animation -->
+    <div class="ambient-bg">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -366,6 +424,24 @@
                     <a href="service.html" class="btn btn-primary" style="margin-top: 1rem;">Download App</a>
                 </div>
             </div>
+            <!-- Content 11 -->
+            <div class="card reveal d2">
+                <img src="assets/images/mobile-banking.webp" alt="Mobile Banking & Payments" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">11. Mobile Payments</h3>
+                    <p>Tap, pay, and transfer instantly using your digital wallet securely.</p>
+                    <a href="service.html" class="btn btn-primary" style="margin-top: 1rem;">Setup Wallet</a>
+                </div>
+            </div>
+            <!-- Content 12 -->
+            <div class="card reveal d3">
+                <img src="assets/images/global-transfers.webp" alt="Global Transfers & FX" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">12. Global Transfers</h3>
+                    <p>Send money worldwide with competitive exchange rates and zero hidden fees.</p>
+                    <a href="service.html" class="btn btn-primary" style="margin-top: 1rem;">Transfer Now</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -456,7 +532,7 @@
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Stackly made buying my first home a reality. Their mortgage advisor walked me through every step and secured a rate I never thought possible."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #264A62, #3a7bd5);">JM</div>
+                        <img src="assets/images/jessica.webp" alt="Jessica Morgan" class="author-avatar" style="object-fit: cover;">
                         <div class="author-info">
                             <span class="author-name">Jessica Morgan</span>
                             <span class="author-role">Mortgage Customer · Salem, TN</span>
@@ -467,7 +543,7 @@
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"The Stackly Elite card gives me 5% back on all my business travel. I've saved over ₹80,000 in the last year alone. Absolutely incredible product."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #8AD2C0, #20b2a0);">RP</div>
+                        <img src="assets/images/rajan.webp" alt="Rajan Patel" class="author-avatar" style="object-fit: cover;">
                         <div class="author-info">
                             <span class="author-name">Rajan Patel</span>
                             <span class="author-role">Business Owner · Mumbai</span>
@@ -478,11 +554,37 @@
                     <div class="testimonial-stars">★★★★★</div>
                     <p class="testimonial-text">"Their AI investment advisor grew my portfolio by 22% last year. The app is slick, support is instant, and I trust them completely with my savings."</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #f97316);">AS</div>
+                        <img src="assets/images/ananya.webp" alt="Ananya Sharma" class="author-avatar" style="object-fit: cover;">
                         <div class="author-info">
                             <span class="author-name">Ananya Sharma</span>
                             <span class="author-role">Investment Customer · Bangalore</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovative Tools Section -->
+    <section class="section" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
+        <div class="container">
+            <h2 class="section-title reveal">Innovative Banking Tools</h2>
+            <p class="section-subtitle reveal d1">Next-generation financial solutions designed for modern living.</p>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                <div class="card reveal d2">
+                    <img src="assets/images/ai-savings.webp" alt="AI Savings Assistant" class="card-img" style="height: 220px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3 class="card-title">AI Savings Assistant</h3>
+                        <p>Our intelligent algorithms analyze your spending habits and automatically round up purchases to build your wealth effortlessly over time.</p>
+                        <a href="service.html" class="btn btn-primary" style="margin-top: 1rem;">Enable Auto-Save</a>
+                    </div>
+                </div>
+                <div class="card reveal d3">
+                    <img src="assets/images/carbon-tracker.webp" alt="Carbon Footprint Tracker" class="card-img" style="height: 220px; object-fit: cover;">
+                    <div class="card-content">
+                        <h3 class="card-title">Carbon Footprint Tracker</h3>
+                        <p>Link your transactions to environmental impact. Monitor, reduce, and offset your carbon footprint directly from your banking app.</p>
+                        <a href="service.html" class="btn btn-primary" style="margin-top: 1rem;">View Impact</a>
                     </div>
                 </div>
             </div>
