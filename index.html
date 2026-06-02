@@ -33,20 +33,6 @@
         .reveal.d5 { transition-delay: 0.45s; }
         .reveal.d6 { transition-delay: 0.55s; }
 
-        /* Hero typing cursor */
-        .typing-cursor {
-            display: inline-block;
-            width: 3px;
-            background: #8AD2C0;
-            margin-left: 4px;
-            border-radius: 2px;
-            animation: blink 0.9s step-end infinite;
-            vertical-align: middle;
-        }
-        @keyframes blink {
-            0%,100% { opacity: 1; }
-            50%      { opacity: 0; }
-        }
 
         /* Hero floating shapes */
         .hero-shape {
@@ -209,7 +195,7 @@
         <div class="hero-shape hs-3"></div>
         <div class="hero-shape hs-4"></div>
         <div class="hero-content">
-            <h1 id="hero-title"></h1>
+            <h1 id="hero-title">Welcome to Stackly Bank</h1>
             <p>Experience the next generation of banking solutions. Secure, fast, and completely tailored to your financial lifestyle.</p>
             <a href="signin.html" class="btn btn-accent">Open an Account</a>
         </div>
@@ -615,26 +601,6 @@
     </footer>
     <script src="js/app.js"></script>
     <script>
-    // ── Hero Typing Effect ──────────────────────────────────────────
-    (function() {
-        const el = document.getElementById('hero-title');
-        if (!el) return;
-        const text = 'Welcome to Stackly Bank';
-        let i = 0;
-        const cursor = document.createElement('span');
-        cursor.className = 'typing-cursor';
-        cursor.innerHTML = '&nbsp;';
-        el.appendChild(cursor);
-
-        function type() {
-            if (i < text.length) {
-                el.insertBefore(document.createTextNode(text[i]), cursor);
-                i++;
-                setTimeout(type, 60 + Math.random() * 40);
-            }
-        }
-        setTimeout(type, 600);
-    })();
 
     // ── Scroll Reveal ───────────────────────────────────────────────
     (function() {

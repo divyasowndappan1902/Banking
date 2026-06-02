@@ -309,10 +309,15 @@
             <p class="text-404-title">Oops! Page Not Found</p>
             <p class="text-404-sub">The page you're looking for is currently under construction or doesn't exist. Let's get you back on track.</p>
 
-            <a href="index.html" class="btn-home-404">
-                ← Back to Home
-                <span class="btn-arrow">→</span>
-            </a>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="javascript:history.back()" class="btn-home-404" style="background: transparent; border: 2px solid #8AD2C0; color: #8AD2C0;">
+                    ← Previous Page
+                </a>
+                <a href="index.html" class="btn-home-404">
+                    Back to Home
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
         </div>
     </div>
 
